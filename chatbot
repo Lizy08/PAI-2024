@@ -1,0 +1,42 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+
+pairs = [
+    [
+        r"hi|hello|hey",
+        ["Hello!", "Hey there!",]
+    ],
+    [
+        r"how are you ?",
+        ["I'm good, thank you!", "I'm doing well, thanks for asking."],
+    ],
+    [
+        r"what is your name ?",
+        ["I'm a chatbot created for the college website.",]
+    ],
+    [
+        r"(.*) (college|university|campus)(.*)",
+        ["Our college is renowned for its academics and extracurricular activities.",]
+    ],
+    [
+        r"(.*) admission (.*)",
+        ["For admission inquiries, please visit our admissions page on the website.",]
+    ],
+    [
+        r"(.*) (courses|programs)(.*)",
+        ["We offer a wide range of courses in various disciplines. You can find more details on our website's courses section.",]
+    ],
+    [
+        r"bye|goodbye",
+        ["Goodbye!", "Bye, take care!"]
+    ],
+]
+
+def college_chatbot():
+    print("Hi! I'm your college chatbot. How can I help you today?")
+    chatbot = Chat(pairs, reflections)
+    chatbot.converse()
+
+if __name__ == "__main__":
+    nltk.download('punkt')  # Ensure the NLTK tokenizer is downloaded
+    college_chatbot()
