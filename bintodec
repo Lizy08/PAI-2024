@@ -1,0 +1,6 @@
+BIN-DEC:
+def binary_to_decimal(binary):
+    return int(binary, 2)
+
+print(binary_to_decimal("1010"))
+print(binary_to_decimal("11011"))
